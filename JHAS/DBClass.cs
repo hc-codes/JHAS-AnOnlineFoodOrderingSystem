@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 
 namespace JHAS
 {
@@ -13,7 +14,7 @@ namespace JHAS
         internal static DataSet Select(string q)
         {
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hari\source\repos\JHAS\JHAS\JHAS.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=.;Initial Catalog=JHAS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(q, conn);
@@ -26,7 +27,7 @@ namespace JHAS
         internal static DataSet SelectSingleItem(string q,string col)
         {
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hari\source\repos\JHAS\JHAS\JHAS.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=.;Initial Catalog=JHAS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlDataAdapter adapter = new SqlDataAdapter(q, conn);
@@ -38,7 +39,7 @@ namespace JHAS
         }
         internal static void Insert(string q)
         {
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hari\source\repos\JHAS\JHAS\JHAS.mdf;Integrated Security=True";
+            string connectionString = @"Data Source=.;Initial Catalog=JHAS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False";
             SqlConnection conn = new SqlConnection(connectionString);
             conn.Open();
             SqlCommand command = new SqlCommand(q, conn);
